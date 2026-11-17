@@ -1,0 +1,88 @@
+C:\Users\prave\Downloads\new-account-0803.pem C:\Users\prave\Downloads\todo-k8s-ec2-complete.zip ubuntu@ec2-34-204-40-195.compute-1.amazonaws.com:\home\ubuntu
+
+sudo apt update && sudo apt upgrade -y
+
+2  docker --version
+    3  curl -sfL https://get.k3s.io | sh -
+    4  sudo kubectl get nodes
+    5  mkdir -p ~/.kube
+    6  sudo cp /etc/rancher/k3s/k3s.yaml ~/.kube/config
+    7  sudo chown ubuntu:ubuntu ~/.kube/config
+    8  chmod 600 ~/.kube/config
+    9  kubectl get nodes
+   10  sudo chmod 644 /etc/rancher/k3s/k3s.yaml
+   11  kubectl get nodes
+   12  cler
+   13  clear
+   14  scp -i new-account-0803.pem todo-k8s-ec2-complete.zip
+   15  ls
+   16  sudo apt install unzip -y
+   17  clear
+   18  ls
+   19  unzip todo-k8s-ec2-complete.zip
+   20  ls
+   21  cd todo-k8s-ec2
+   22  mkdir todo-k8s-ec2
+   23  ls
+   24  mv backend todo-k8s-ec2
+   25  mv  k8s todo-k8s-ec2
+   26  mv  frontend todo-k8s-ec2
+   27  mv  README.md todo-k8s-ec2
+   28  ls
+   29  cd todo-k8s-ec2
+   30  ls
+   31  clear
+   32  ls
+   33  docker login
+   34  ls
+   35  docker build -t chary5624/todo-api:v1 ./backend
+   36  clear
+   37  docker build -t chary5624/todo-web:v1 ./frontend
+   38  clear
+   39  docker images
+   40  docker push chary5624/todo-api:v1
+   41  docker push chary5624/todo-web:v1
+   42  clear
+   43  ls
+   44  cd k8s
+   45  ls
+   46  nano  postgres.yaml
+   47  ls
+   48  nano backend.yaml
+   49  docker images
+   50  nano backend.yaml
+   51  nano  postgres.yaml
+   52  nano backend.yaml
+   53  nano frontend.yaml
+   54  ls
+   55  kubectl apply -f k8s/namespace.yaml
+   56  cd ..
+   57  clear
+   58  ls
+   59  kubectl apply -f k8s/namespace.yaml
+   60  kubectl apply -f k8s/postgres.yaml
+   61  kubectl get pods
+   62  kubectl namespace/todo
+   63  kubectl get namespace
+   64  cd k8s
+   65  clear
+   66  ls
+   67  nano postgres.yaml
+   68  nano backend.yaml
+   69  cd ..
+   70  clear
+   71  ls
+   72  kubectl apply -f k8s/postgres.yaml
+   73  kubectl rollout status deployment/postgres -n todo
+   74  kubectl apply -f k8s/backend.yaml
+   75  kubectl apply -f k8s/frontend.yaml
+   76  kubectl get pods -n todo
+   77  kubectl get services -n todo
+   78  kubectl get deployments -n todo
+   79  kubectl describe pod POD_NAME -n todo
+   80  kubectl logs deployment/todo-api -n todo
+   81  kubectl logs deployment/todo-web -n todo
+   82  kubectl logs deployment/postgres -n todo
+   83  clear
+   84  kubectl get pods -n todo
+   85  kubectl get deployments -n todo
